@@ -12,7 +12,6 @@
         info@experiensa.com | +41 76 571 49 31
       </div>
       <div class="col-4">
-
       </div>
     </div>
 
