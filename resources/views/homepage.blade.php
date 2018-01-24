@@ -50,7 +50,7 @@ Template Name: Homepage
           <span class="fa-stack fa-2x experiensa-color mv2">
             <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
             <i class="fa fa-paper-plane fa-stack-1x fa-inverse" aria-hidden="true"></i>
-          </span>          
+          </span>
           <h3>Efficiency</h3>
           <p>
             Improve your communication and save time writing emails
