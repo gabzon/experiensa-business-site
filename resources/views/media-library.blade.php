@@ -31,15 +31,14 @@ Template Name: Media Library
             @php( $image = wp_get_attachment_image_src( get_the_ID(), 'full' ) )
             <img src="{{ $image[0] }}" class="card-img-top img-fluid">
             <div class="card-img-overlay hover-bg-black-40">
+              @php
+                $url = get_post_meta(get_the_ID(),'exp_media_url',true);
+                $terms = wp_get_post_terms( get_the_ID(), 'media_country' );
+              @endphp
               <span class="card-title white b media-title">{{ get_the_title() }}</span><br>
-              <span class="white"><i class="fas fa-map-marker"></i> Country</span>
+              <span class="white"><i class="fas fa-map-marker"></i> {{$terms[0]->name }}</span>
               <div class="media-buttons" style="position:absolute; bottom:10px;">
                 <a href="{{ $image[0] }}" class="btn btn-outline-light btn-sm" download><i class="fas fa-download"></i></a>
-                @php
-                  $url = get_post_meta(get_the_ID(),'exp_media_url',true);
-                  $terms = wp_get_post_terms( get_the_ID(), 'media_country' );
-                  piklist::pre($terms)
-                @endphp
                 <a href="{{ $url }}" class="btn btn-outline-light btn-sm" target="_blank"><i class="fas fa-globe"></i></a>
                 <a href="{{ get_permalink() }}" class="btn btn-outline-light btn-sm" target="_blank"><i class="fas fa-info-circle"></i></a>
               </div>
