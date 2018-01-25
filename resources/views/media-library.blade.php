@@ -52,6 +52,6 @@ Template Name: Media Library
 
     @php(wp_reset_postdata())
 
-    @include('partials.content-page')
+    {{-- @include('partials.content-page') --}}
   @endwhile
 @endsection
