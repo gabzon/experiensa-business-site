@@ -1,4 +1,4 @@
-<footer class="content-info">
+<footer class="content-info" id="footer-section">
   <div class="container">
     <br>
     <br>
