@@ -19,7 +19,7 @@ Template Name: Homepage
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <span class="fa-stack fa-2x experiensa-color mv2">
             <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
-            <i class="fa fa-diamond fa-stack-1x fa-inverse" aria-hidden="true"></i>
+            <i class="far fa-gem fa-stack-1x fa-inverse" aria-hidden="true"></i>
           </span>
           <h3>Websites</h3>
           <p>
@@ -29,7 +29,7 @@ Template Name: Homepage
         <div class="col-12 col-sm-6 col-md-4 col-lg-3">
           <span class="fa-stack fa-2x experiensa-color mv2">
             <i class="fa fa-circle fa-stack-2x" aria-hidden="true"></i>
-            <i class="fa fa-newspaper-o fa-stack-1x fa-inverse" aria-hidden="true"></i>
+            <i class="far fa-newspaper fa-stack-1x fa-inverse" aria-hidden="true"></i>
           </span>
           <h3>Catalog</h3>
           <p>
