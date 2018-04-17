@@ -27,7 +27,7 @@ Template Name: Clients
             <div class="card-body">
               <h5 class="card-title tc">{{ get_the_title() }}</h5>
               {{-- <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> --}}
-              {{-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> --}}
+              <p class="card-text tc"><small class="text-muted ttc">{{ get_post_meta(get_the_ID(),'exp_client_type',true) }}</small></p>
             </div>
           </div>
         </a>
