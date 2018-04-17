@@ -1,6 +1,6 @@
 module.exports = {
   "root": true,
-  "extends": "eslint:recommended",
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
   "globals": {
     "wp": true
   },
@@ -15,6 +15,7 @@ module.exports = {
     "ecmaFeatures": {
       "globalReturn": true,
       "generators": false,
+      "jsx": true,
       "objectLiteralDuplicateProperties": false,
       "experimentalObjectRestSpread": true
     },
@@ -22,7 +23,8 @@ module.exports = {
     "sourceType": "module"
   },
   "plugins": [
-    "import"
+    "import",
+    "react"
   ],
   "settings": {
     "import/core-modules": [],
@@ -42,6 +44,7 @@ module.exports = {
         "exports": "always-multiline",
         "functions": "ignore"
       }
-    ]
+    ],
+    "react/jsx-uses-vars": 2,
   }
 }

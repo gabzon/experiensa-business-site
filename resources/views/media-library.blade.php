@@ -10,6 +10,7 @@ Template Name: Media Library
     {{-- @include('partials.content-page') --}}
   @endwhile
 
+  {{-- https://discourse.roots.io/t/pagination-custom-query-cpt/9908 --}}
   @php
   // WP_Query arguments
   global $paged;
