@@ -12,7 +12,10 @@ Template Name: Clients
 
   {{-- WP_Query arguments --}}
   @php
-  $args = array('post_type' => array( 'exp_client' ));
+  $args = array(
+    'post_type'       => array( 'exp_client' ),
+    'posts_per_page'  => -1,
+  );
   $clients = new WP_Query( $args );
   @endphp
 
