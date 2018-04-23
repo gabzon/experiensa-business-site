@@ -17,6 +17,7 @@ Template Name: Clients
     'meta_key'        => 'exp_client_type',
     'posts_per_page'  => -1,
     'meta_value'      => 'operator',
+    'orderby'         => 'rand',
   );
   $operator = new WP_Query( $args );
   @endphp
@@ -25,12 +26,11 @@ Template Name: Clients
   <br>
   {{-- The Loop --}}
   @if ($operator->have_posts())
-    <div class="row">
+    <div class="card-columns">
       @while ( $operator->have_posts() )
         @php($operator->the_post())
-        <div class="col-12 col-sm-6 col-md-3 col-lg-3">
           <a href="{{ get_post_meta(get_the_ID(), 'exp_client_website', true) }}">
-            <div class="card mb3">
+            <div class="card mb3 pt1">
               <img class="card-img-top" src="{{ get_the_post_thumbnail_url( get_the_ID(),'post-thumbnail' ) }}" alt="{{ get_the_title() }}">
               {{-- <div class="card-body"> --}}
                 {{-- <h5 class="card-title tc">{{ get_the_title() }}</h5> --}}
@@ -39,7 +39,6 @@ Template Name: Clients
               {{-- </div> --}}
             </div>
           </a>
-        </div>
       @endwhile
     </div>
   @else
@@ -59,17 +58,17 @@ Template Name: Clients
     'meta_key'        => 'exp_client_type',
     'posts_per_page'  => -1,
     'meta_value'      => 'agency',
+    'orderby'         => 'rand',
   );
   $agency = new WP_Query( $args );
   @endphp
 
   @if ($agency->have_posts())
-    <div class="row">
+    <div class="card-columns">
       @while ( $agency->have_posts() )
         @php($agency->the_post())
-        <div class="col-12 col-sm-6 col-md-3 col-lg-3">
           <a href="{{ get_post_meta(get_the_ID(), 'exp_client_website', true) }}" target="_blank">
-            <div class="card">
+            <div class="card mb3 pt1">
               <img class="card-img-top" src="{{ get_the_post_thumbnail_url( get_the_ID(),'post-thumbnail' ) }}" alt="Card image cap">
               <div class="card-body">
                 {{-- <h5 class="card-title tc">{{ get_the_title() }}</h5> --}}
@@ -78,7 +77,6 @@ Template Name: Clients
               </div>
             </div>
           </a>
-        </div>
       @endwhile
     </div>
   @else
