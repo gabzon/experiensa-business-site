@@ -14,7 +14,9 @@ Template Name: Clients
   @php
   $args = array(
     'post_type'       => array( 'exp_client' ),
+    'meta_key'        => 'exp_client_type',
     'posts_per_page'  => -1,
+    'meta_value'      => 'operator',
   );
   $clients = new WP_Query( $args );
   @endphp
