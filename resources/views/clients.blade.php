@@ -21,7 +21,7 @@ Template Name: Clients
   $operator = new WP_Query( $args );
   @endphp
 
-  <h1 class="tc">Tour Operators</h1>
+  <h1 class="tc avenir pt2 fw1 ph3 ph0-l">Tour Operators</h1>
   <br>
   {{-- The Loop --}}
   @if ($operator->have_posts())
@@ -32,11 +32,11 @@ Template Name: Clients
           <a href="{{ get_post_meta(get_the_ID(), 'exp_client_website', true) }}">
             <div class="card">
               <img class="card-img-top" src="{{ get_the_post_thumbnail_url( get_the_ID(),'post-thumbnail' ) }}" alt="Card image cap">
-              <div class="card-body">
+              {{-- <div class="card-body"> --}}
                 {{-- <h5 class="card-title tc">{{ get_the_title() }}</h5> --}}
                 {{-- <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> --}}
-                <p class="card-text tc"><small class="text-muted ttc">{{ get_post_meta(get_the_ID(),'exp_client_type',true) }}</small></p>
-              </div>
+                {{-- <p class="card-text tc"><small class="text-muted ttc">{{ get_post_meta(get_the_ID(),'exp_client_type',true) }}</small></p> --}}
+              {{-- </div> --}}
             </div>
           </a>
         </div>
@@ -50,7 +50,7 @@ Template Name: Clients
   @php( wp_reset_postdata() )
   <br>
   <hr>
-  <h1 class="tc">Travel agencies</h1>
+  <h1 class="tc avenir pt2 fw1 ph3 ph0-l">Travel agencies</h1>
   <br>
   {{-- WP_Query arguments --}}
   @php
