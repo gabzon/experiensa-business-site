@@ -30,7 +30,7 @@ piklist('field', [
   'field'   => 'exp_client_type',
   'label'   => 'Type of client',
   'choices' => [
-    'agence'    => 'Travel Agency',
+    'agency'    => 'Travel Agency',
     'operator'  => 'Tour Operator',
   ],
   'columns' => 6,
