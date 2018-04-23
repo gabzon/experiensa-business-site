@@ -31,7 +31,7 @@ Template Name: Clients
         <div class="col-12 col-sm-6 col-md-3 col-lg-3">
           <a href="{{ get_post_meta(get_the_ID(), 'exp_client_website', true) }}">
             <div class="card mb3">
-              <img class="card-img-top" src="{{ get_the_post_thumbnail_url( get_the_ID(),'post-thumbnail' ) }}" alt="Card image cap">
+              <img class="card-img-top" src="{{ get_the_post_thumbnail_url( get_the_ID(),'post-thumbnail' ) }}" alt="{{ get_the_title() }}">
               {{-- <div class="card-body"> --}}
                 {{-- <h5 class="card-title tc">{{ get_the_title() }}</h5> --}}
                 {{-- <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> --}}
