@@ -23,7 +23,7 @@ Template Name: Media Library
 
   $args = [
     'post_type'              => array( 'attachment' ),
-    'posts_per_page'         => 15,
+    'posts_per_page'         => 30,
     'orderby'                => 'rand',
     'post_status'            => 'inherit',
     'post_mime_type'         => 'image',
