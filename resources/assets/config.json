@@ -8,7 +8,7 @@
       "./scripts/customizer.js"
     ]
   },
-  "publicPath": "/app/themes/sage",
+  "publicPath": "/experiensa/wp-content/themes/experiensa",
   "devUrl": "http://localhost/experiensa",
   "proxyUrl": "http://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",

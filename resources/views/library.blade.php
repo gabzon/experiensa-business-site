@@ -1,5 +1,5 @@
 {{--
-Template Name: Media Library
+Template Name: Library
 --}}
 
 @extends('layouts.app')
@@ -7,6 +7,12 @@ Template Name: Media Library
 @section('content')
   @while(have_posts()) @php(the_post())
     @include('partials.page-header')
+    <br>
+    Hello look under this
+    <div id="librar"></div>
+    <br>
+    <br>
+    <h1>Wordpress</h1>
     {{-- @include('partials.content-page') --}}
   @endwhile
 
@@ -35,6 +41,7 @@ Template Name: Media Library
 
   $wp_query = $media;
   @endphp
+
 
   @if ( $media->have_posts() )
 

@@ -93,6 +93,7 @@ Container::getInstance()
 
 
 
+
 /**
 * Add Photographer Name and URL fields to media uploader
 *
@@ -129,4 +130,18 @@ function be_attachment_field_credit_save( $post, $attachment ) {
 }
 
 add_filter( 'attachment_fields_to_save', 'be_attachment_field_credit_save', 10, 2 );
-?>
+
+
+//////
+add_filter('sage/display_sidebar', function ($display) {
+    static $display;
+
+    isset($display) || $display = in_array(true, [
+      // The sidebar will be displayed if any of the following return true
+      is_single(),
+      is_404(),
+      is_page_template('template-custom.php')
+    ]);
+
+    return $display;
+});

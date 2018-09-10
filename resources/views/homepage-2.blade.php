@@ -1,5 +1,5 @@
 {{--
-Template Name: Homepage
+Template Name: Homepage 2.0
 --}}
 
 @extends('layouts.app')
