@@ -17,7 +17,7 @@ class Library extends Component {
 
     wp.media().perPage( 100 ).embed().get(function( err, data ) {
       if ( err ) {
-        console.log(err);
+        //console.log(err);
       }
       return data;
 
@@ -32,7 +32,7 @@ class Library extends Component {
 }
 
 render(){
-  console.log(this.state.mediaList);
+  //console.log(this.state.mediaList);
   return(
     <div>
       <input type="text"/>
