@@ -36,4 +36,18 @@ piklist('field', [
   'columns' => 6,
 ]);
 
+piklist('field', [
+  'type'    => 'text',
+  'field'   => 'exp_client_source_type',
+  'label'   => 'Source Type',
+  'columns' => 6,
+]);
+
+piklist('field', [
+  'type'    => 'text',
+  'field'   => 'exp_client_source',
+  'label'   => 'Source',
+  'columns' => 12,
+]);
+
 ?>
