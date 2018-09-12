@@ -34,7 +34,11 @@ $operator = new WP_Query( $args );
           <td><b>{{ get_the_title() }}</b></td>
           <td><small>{{ get_post_meta(get_the_ID(), 'exp_client_source_type', true) }}</small></td>
           <td><a href="{{ get_post_meta(get_the_ID(), 'exp_client_website', true) }}" target="_blank">catalog</a></td>
-          <td><a href="{{ get_post_meta(get_the_ID(), 'exp_client_source', true) }}" target="_blank">source</a></td>
+          <td>
+            @if ( get_post_meta(get_the_ID(), 'exp_client_source', true) )
+              <a href="{{ get_post_meta(get_the_ID(), 'exp_client_source', true) }}" target="_blank">source</a>
+            @endif
+          </td>
         </tr>
       @endwhile
     </table>
