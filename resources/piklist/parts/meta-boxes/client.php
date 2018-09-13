@@ -6,13 +6,6 @@ Post Type: exp_client
 
 piklist('field', [
   'type'    => 'text',
-  'field'   => 'exp_client_website',
-  'label'   => 'Website',
-  'columns' => 12,
-]);
-
-piklist('field', [
-  'type'    => 'text',
   'field'   => 'exp_client_email',
   'label'   => 'Email',
   'columns' => 8,
@@ -24,6 +17,14 @@ piklist('field', [
   'label'   => 'Phone number',
   'columns' => 6,
 ]);
+
+piklist('field', [
+  'type'    => 'text',
+  'field'   => 'exp_client_website',
+  'label'   => 'Website',
+  'columns' => 12,
+]);
+
 
 piklist('field', [
   'type'    => 'select',
@@ -46,6 +47,13 @@ piklist('field', [
 piklist('field', [
   'type'    => 'text',
   'field'   => 'exp_client_source',
+  'label'   => 'Source',
+  'columns' => 12,
+]);
+
+piklist('field', [
+  'type'    => 'text',
+  'field'   => 'exp_client_official_website',
   'label'   => 'Source',
   'columns' => 12,
 ]);
