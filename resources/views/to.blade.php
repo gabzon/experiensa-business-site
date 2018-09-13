@@ -27,19 +27,19 @@ $operator = new WP_Query( $args );
   <br>
   {{-- The Loop --}}
   @if ($operator->have_posts())
-    <table class="table table-hover">
+    <table class="table table-hover table-sm">
       @while ( $operator->have_posts() )
         @php($operator->the_post())
         <tr>
           <td><b>{{ get_the_title() }}</b></td>
           <td><small class="text-muted">{{ get_post_meta(get_the_ID(), 'exp_client_source_type', true) }}</small></td>
-          <td class="text-right"><a href="{{ get_post_meta(get_the_ID(), 'exp_client_website', true) }}" target="_blank">catalog</a></td>
           <td class="text-right">
+            @if ( get_post_meta(get_the_ID(), 'exp_client_website', true) )
+              <a href="{{ get_post_meta(get_the_ID(), 'exp_client_website', true) }}" target="_blank">catalog</a>
+            @endif
             @if ( get_post_meta(get_the_ID(), 'exp_client_source', true) )
               <a href="{{ get_post_meta(get_the_ID(), 'exp_client_source', true) }}" target="_blank">source</a>
             @endif
-          </td>
-          <td class="text-right">
             @if ( get_post_meta(get_the_ID(), 'exp_client_official_website', true) )
               <a href="{{ get_post_meta(get_the_ID(), 'exp_client_official_website', true) }}" target="_blank">website</a>
             @endif
@@ -48,7 +48,7 @@ $operator = new WP_Query( $args );
       @endwhile
     </table>
   @else
-    no Tour operators found
+    No Tour operators found
   @endif
 
   {{-- Restore original Post Data --}}
