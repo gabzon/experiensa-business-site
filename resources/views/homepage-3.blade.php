@@ -47,8 +47,6 @@ Template Name: Homepage 3.0
       Our mission is to find solutions to help travel agencies and tour operators transforming their businesses to adapt to new markets. We provide travel companies with the tools and technologies needed to increase customer satisfaction and business efficiency
     </h3>
 
-
-
     <br>
 
     <h1 class="f2 f2-m f1-l fw2 black-90 mv6 tc avenir">
