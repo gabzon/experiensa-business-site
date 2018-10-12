@@ -1,5 +1,5 @@
 <div class="table-responsive">
-  <table class="table table-hover">
+  <table class="table table-hover table-sm">
     <tr>
       <td class="red">Title*</td>
       <td>Main title of the offert</td>

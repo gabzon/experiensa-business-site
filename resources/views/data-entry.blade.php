@@ -10,7 +10,7 @@ Template Name: Data Entry
 
     <p>
       Experiensa’s mission is to help travel agencies to keep an updated catalog of travel offers, we achieve this by feeding our system with travel products from each Tour Operator (T.O).
-      This page attempts to define a standard of data entry in the experiensa system in order to ensure quality and coherence among all Tour Operators in Switzerland
+      This page defines a standard of data entry in the experiensa system for all Tour Operators in Switzerland in order to ensure quality and coherence
     </p>
 
     <h2>Index</h2>
@@ -18,6 +18,7 @@ Template Name: Data Entry
       <li><a href="#concepts">Concepts and Tasks specifications</a></li>
       <li><a href="#fields">List of fields</a></li>
       <li><a href="#howto">How to input the information in Experiensa?</a></li>
+      {{-- <li><a href="#procedure">Input Procedure</a></li> --}}
       <li><a href="#future">Future Fields</a></li>
       <li><a href="#roadmap">Roadmap</a></li>
     </ul>
@@ -59,14 +60,16 @@ Template Name: Data Entry
         The fields are listed and described in the table below
       </p>
       <br>
-      @include('experiensa.fields')
+      @include('standard.fields')
     </section>
 
     <br>
 
     <section id="howto" class="pt-5">
-      @include('experiensa.howto')
+      @include('standard.howto')
     </section>
+
+    <br>
 
     <section id="future" class="pt-5">
       <hr>
@@ -82,22 +85,12 @@ Template Name: Data Entry
       </ul>
     </section>
 
+    <br>
+
     <section id="roadmap" class="pt-5">
       <hr>
       <h3>Roadmap</h3>
-      <ul>
-        <li>Dates filter: min max date</li>
-        <li>Search bar</li>
-        <li>hotels.experiensa.com</li>
-        <li>destinations.experiensa.com</li>
-        <li>Add Image gallery field to the following taxonomies ( Countries| Destinations | Theme)</li>
-        <li>Add Health/Vaccin information field to the following taxonomies ( Country | Destination )</li>
-        <li>Weather information field to add to the following taxonomies</li>
-        <li>Random order of catalog</li>
-        <li>Activity(s)</li>
-        <li>Itinerary</li>
-        <li>Hotel(s)</li>
-      </ul>
+      @include('standard.roadmap')
     </section>
 
     @include('partials.content-page')
