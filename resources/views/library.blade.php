@@ -2,17 +2,19 @@
 Template Name: Library
 --}}
 
+{{-- https://stackoverflow.com/questions/27593740/how-to-loop-over-images-in-media-library-and-display-them-wordpress --}}
+{{-- https://wordpress.stackexchange.com/questions/166857/retrieve-image-from-media-library-by-its-category --}}
 @extends('layouts.app')
 
 @section('content')
   @while(have_posts()) @php(the_post())
     @include('partials.page-header')
     <br>
-    Hello look under this
+
     <div id="librar"></div>
     <br>
-    <br>
-    <h1>Wordpress</h1>
+
+
     {{-- @include('partials.content-page') --}}
   @endwhile
 
@@ -44,7 +46,6 @@ Template Name: Library
 
 
   @if ( $media->have_posts() )
-
     <div class="card-columns" id="card-columns">
       @while ( $media->have_posts() )
         <div class="card grow">
@@ -70,27 +71,39 @@ Template Name: Library
         </div>
       @endwhile
     </div>
+    <br>
+    <div style="display: flex;align-items: center;justify-content: center;">
+      @php
+      //https://gist.github.com/mtx-z/f95af6cc6fb562eb1a1540ca715ed928
+      // option 2 (not used) : https://github.com/talentedaamer/Bootstrap-wordpress-pagination
+      echo bootstrap_pagination($media);
+      @endphp
+
+
+    </div>
+
 
     @php(wp_reset_postdata())
 
-    @if ($media->max_num_pages > 1)
-      <br>
-      <nav class="posts-navigation">
-        <div class="nav-previous">
-          {!! get_previous_posts_link( __('&larr; Previous', 'sage') ) !!}
-        </div>
-        <div class="nav-next">
-          {!! get_next_posts_link( __('Next &rarr;', 'sage'), $media->max_num_pages ) !!}
-        </div>
-      </nav>
-      @php
-      $wp_query = NULL;
-      $wp_query = $temp;
-      @endphp
-    @endif
-  @else
-    <div class="alert alert-warning">
-      {{ __('Sorry, no posts were found.', 'sage') }}
-    </div>
-  @endif
+    {{-- @if ($media->max_num_pages > 1)
+    <br>
+    <nav class="posts-navigation" aria-label="Page navigation example">
+    <ul class="pagination">
+    <li class="page-item nav-previous">
+    <a class="page-link" href="#">{!! get_previous_posts_link( __('&larr; Previous', 'sage') ) !!}</a>
+  </li>
+  <li class="page-item nav-next"><a class="page-link" href="#">{!! get_next_posts_link( __('Next &rarr;', 'sage'), $media->max_num_pages ) !!}</a></li>
+</ul>
+</nav>
+
+@php
+$wp_query = NULL;
+$wp_query = $temp;
+@endphp
+@endif --}}
+@else
+  <div class="alert alert-warning">
+    {{ __('Sorry, no posts were found.', 'sage') }}
+  </div>
+@endif
 @endsection

@@ -58,7 +58,7 @@ array_map(function ($file) use ($sage_error) {
   if (!locate_template($file, true, true)) {
     $sage_error(sprintf(__('Error locating <code>%s</code> for inclusion.', 'sage'), $file), 'File not found');
   }
-}, ['helpers', 'setup', 'filters', 'admin', 'cpt/client']);
+}, ['helpers', 'setup', 'filters', 'admin', 'cpt/client', 'inc/wp-bootstrap-pagination']);
 
 /**
 * Here's what's happening with these hooks:
@@ -132,7 +132,6 @@ function be_attachment_field_credit_save( $post, $attachment ) {
 add_filter( 'attachment_fields_to_save', 'be_attachment_field_credit_save', 10, 2 );
 
 
-//////
 add_filter('sage/display_sidebar', function ($display) {
     static $display;
 
@@ -145,3 +144,12 @@ add_filter('sage/display_sidebar', function ($display) {
 
     return $display;
 });
+
+
+// add_action('wp_head', 'show_template');
+// function show_template() {
+// 	global $template;
+//     echo '<div style="background:red; position:fixed; bottom:10px;">';
+//     print_r($template);
+//     echo '</div>';
+// }
