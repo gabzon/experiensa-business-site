@@ -3,12 +3,13 @@
 <br>
 <div class="row">
   <div class="col-12 col-sm-6 col-md-6 col-lg-6">
-      <iframe width="100%" height="450" src="https://www.youtube.com/embed/Vo2TYNodHC4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      <iframe width="100%" height="300" src="https://www.youtube.com/embed/Vo2TYNodHC4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
   </div>
   <div class="col-12 col-sm-6 col-md-6 col-lg-6">
     <p>Read carefully each travel offer and input the data of the offer into the appropriate field in the corresponding Tour Operator’s website. Each voyage created needs to have the following information:</p>
   </div>
 </div>
+<br>
 <br>
 <div class="row">
   <div class="col-3">
@@ -353,8 +354,6 @@
           <li>If you have videos, you can add them in the description section</li>
         </ul>
         <br>
-
-
       </div>
     </div>
   </div>

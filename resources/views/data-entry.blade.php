@@ -93,7 +93,7 @@ Template Name: Data Entry
       @include('standard.roadmap')
     </section>
 
-    @include('partials.content-page')
+    {{-- @include('partials.content-page') --}}
   @endwhile
 
 @endsection
