@@ -3,6 +3,9 @@
 <br>
 <p>Read carefully each travel offer and input the offer data into the corresponding field in the Tour Operator’s website. Each voyage created needs to have the following information:</p>
 <br>
+
+<iframe width="100%" height="450" src="https://www.youtube.com/embed/Vo2TYNodHC4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 <div class="row">
   <div class="col-3">
     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
