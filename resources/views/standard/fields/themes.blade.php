@@ -1,0 +1,99 @@
+Themes is what defines the purpose of the offer. <br>
+<br>
+Please select the themes that correspond to the offer. an offer can have one or many themes
+<br>
+<br>
+<i>Currently we are only using French names, so write only the french name</i>
+<br>
+<br>
+<span class="f5">List of themes:</span>
+<br>
+<br>
+<table class="table table-sm">
+  <thead>
+    <tr>
+      <th>English</th>
+      <th>French</th>
+      <th>Spanish</th>
+      <th>German</th>
+    </tr>
+  </thead>
+  <tr>
+    <td>Nature</td>
+    <td>Nature</td>
+    <td>Naturaleza</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>SightSeeing</td>
+    <td>Tourisme</td>
+    <td>Turismo</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Family</td>
+    <td>Famille</td>
+    <td>Familia</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Business</td>
+    <td>Business</td>
+    <td>Negocios</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Sport</td>
+    <td>Sport</td>
+    <td>Deporte</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Adventure</td>
+    <td>Aventure</td>
+    <td>Aventura</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Honeymoon</td>
+    <td>Voyage de noces</td>
+    <td>Luna de miel</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Gastronomy</td>
+    <td>Gastronomie</td>
+    <td>Gastronomia</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Leisure</td>
+    <td>Loisirs</td>
+    <td>Ocio</td>
+    <td>Freizeit</td>
+  </tr>
+  <tr>
+    <td>Discovery</td>
+    <td>Découverte</td>
+    <td>Descubrimiento</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>History</td>
+    <td>Histore</td>
+    <td>Historia</td>
+    <td>Geschichte</td>
+  </tr>
+  <tr>
+    <td>Culture</td>
+    <td>Culture</td>
+    <td>Cultura</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Wellbeing</td>
+    <td>Bien-être</td>
+    <td>Bienestar</td>
+    <td></td>
+  </tr>
+</table>
