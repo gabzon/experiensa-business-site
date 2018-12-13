@@ -26,6 +26,8 @@
       <a class="nav-link" id="v-pills-included-tab" data-toggle="pill" href="#v-pills-included" role="tab" aria-controls="v-pills-included" aria-selected="false">Included</a>
       <a class="nav-link" id="v-pills-excluded-tab" data-toggle="pill" href="#v-pills-excluded" role="tab" aria-controls="v-pills-excluded" aria-selected="false">Excluded</a>
       <a class="nav-link" id="v-pills-media-tab" data-toggle="pill" href="#v-pills-media" role="tab" aria-controls="v-pills-media" aria-selected="false">Media</a>
+      <a class="nav-link" id="v-pills-categories-tab" data-toggle="pill" href="#v-pills-categories" role="tab" aria-controls="v-pills-categories" aria-selected="false">Categories</a>
+      <a class="nav-link" id="v-pills-tags-tab" data-toggle="pill" href="#v-pills-tags" role="tab" aria-controls="v-pills-tags" aria-selected="false">Tags</a>
     </div>
   </div>
   <div class="col-9">
@@ -62,6 +64,12 @@
       </div>
       <div class="tab-pane fade" id="v-pills-media" role="tabpanel" aria-labelledby="v-pills-media-tab">
         @include('standard.fields.media')
+      </div>
+      <div class="tab-pane fade" id="v-pills-categories" role="tabpanel" aria-labelledby="v-pills-categories-tab">
+        @include('standard.fields.categories')
+      </div>
+      <div class="tab-pane fade" id="v-pills-tags" role="tabpanel" aria-labelledby="v-pills-tags-tab">
+        @include('standard.fields.tags')
       </div>
     </div>
   </div>
