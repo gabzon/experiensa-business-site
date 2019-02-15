@@ -12,6 +12,7 @@ function add_custom_fields() {
   register_rest_field('attachment','daylight',    ['get_callback' => 'get_media_daylight_field']);
   register_rest_field('attachment','destinations',['get_callback' => 'get_media_destinations_field']);
   register_rest_field('attachment','format',      ['get_callback' => 'get_media_format_field']);
+  register_rest_field('attachment','source_website', ['get_callback' => 'get_media_source_website_field']);
 
 }
 
@@ -53,4 +54,9 @@ function get_media_destinations_field($object, $field_name, $request){
 // Format
 function get_media_format_field($object, $field_name, $request){
   return wp_get_post_terms( $object['id'], 'media_format', array("fields" => "names"));
+}
+
+// Source website
+function get_media_source_website_field($object, $field_name, $request){
+  return get_post_meta( $object['id'], 'exp_media_url', true);
 }
