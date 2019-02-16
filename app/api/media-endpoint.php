@@ -58,7 +58,7 @@ function custom_meta_query(){
       array(
         'taxonomy' => 'media_country',
         'field' => 'slug',
-        'terms' => 'venezuela'
+        'terms' => 'portugal'
       ),
     )
   );
