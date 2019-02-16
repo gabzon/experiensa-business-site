@@ -70,7 +70,11 @@ function custom_meta_query(){
 
     while($query->have_posts()) {
       $query->the_post();
-      $data['title'] = get_the_title();
+      $data[] = [
+        'id'      => get_the_ID(),
+        'title'   => get_the_title(),
+        'content' => get_the_content()
+      ];
     }
     // Return the data
     return $data;
