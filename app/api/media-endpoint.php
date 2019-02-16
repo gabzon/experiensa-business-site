@@ -80,8 +80,10 @@ function custom_meta_query(){
         'medium'    => wp_get_attachment_image_src( $id, 'medium' )[0],
         'large'     => wp_get_attachment_image_src( $id, 'large' )[0],
         'full'      => wp_get_attachment_image_src( $id, 'full' )[0],
-        'season'    => wp_get_post_terms( $id, 'media_season', array("fields" => "names")),
-        'daylight'  => wp_get_post_terms( $object['id'], 'media_daylight', array("fields" => "names")),
+        'season'    => wp_get_post_terms( $id, 'media_season',    array("fields" => "names") ),
+        'daylight'  => wp_get_post_terms( $id, 'media_daylight',  array("fields" => "names") ),
+        'category'  => wp_get_post_terms( $id, 'media_category',  array("fields" => "names") ),
+        'place'     => wp_get_post_terms( $id, 'media_place',     array("fields" => "names") ),
       ];
     }
     // Return the data
