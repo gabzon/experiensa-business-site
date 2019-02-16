@@ -37,7 +37,7 @@ function custom_meta_query(){
     $params['format'] = $_GET['format'];
   }
 
-  $tax_query_args = get_tax_query_args($params);
+  //$tax_query_args = get_tax_query_args($params);
 
   $args = array(
     'post_type'       => array( 'attachment' ),
@@ -54,11 +54,11 @@ function custom_meta_query(){
     'post_status'     => 'inherit',
     'posts_per_page'  => 100,
     'tax_query'       => array(
-      'relation' => 'AND',
+      //'relation' => 'AND',
       array(
         'taxonomy' => 'media_country',
         'field' => 'slug',
-        'terms' => 'portugal'
+        'terms' => $params['country']
       ),
     )
   );
