@@ -76,6 +76,7 @@ function custom_meta_query(){
         'title'     => get_the_title(),
         'slug'      => get_post_field( 'post_name', get_post() ),
         'content'   => get_the_content(),
+        'link'      => get_the_permalink(),
         'thumbnail' => wp_get_attachment_image_src( $id, 'thumbnail' )[0],
         'medium'    => wp_get_attachment_image_src( $id, 'medium' )[0],
         'large'     => wp_get_attachment_image_src( $id, 'large' )[0],
@@ -84,8 +85,12 @@ function custom_meta_query(){
         'daylight'  => wp_get_post_terms( $id, 'media_daylight',  array("fields" => "names") ),
         'category'  => wp_get_post_terms( $id, 'media_category',  array("fields" => "names") ),
         'place'     => wp_get_post_terms( $id, 'media_place',     array("fields" => "names") ),
+        'format'    => wp_get_post_terms( $id, 'media_format',    array("fields" => "names")),
+        'destination' => wp_get_post_terms( $id, 'media_destination', array("fields" => "names")),
+        'source_website' => get_post_meta( $id, 'exp_media_url', true)
       ];
     }
+
     // Return the data
     return $data;
   }else{
