@@ -71,9 +71,15 @@ function custom_meta_query(){
     while($query->have_posts()) {
       $query->the_post();
       $data[] = [
-        'id'      => get_the_ID(),
-        'title'   => get_the_title(),
-        'content' => get_the_content()
+        'id'        => get_the_ID(),
+        'title'     => get_the_title(),
+        'slug'      => get_the_slug(),
+        'content'   => get_the_content()
+        'thumbnail' => wp_get_attachment_image_src( get_the_ID(), 'thumbnail' ),
+        'medium'    => wp_get_attachment_image_src( get_the_ID(), 'medium' ),
+        'large'     => wp_get_attachment_image_src( get_the_ID(), 'large' ),
+        'full'      => wp_get_attachment_image_src( get_the_ID(), 'full' ),
+
       ];
     }
     // Return the data
