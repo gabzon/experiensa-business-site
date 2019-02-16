@@ -65,6 +65,7 @@ array_map(function ($file) use ($sage_error) {
   'admin',
   'cpt/client',
   'api/media',
+  'api/media-endpoint',
   'inc/wp-bootstrap-pagination'
 ]);
 

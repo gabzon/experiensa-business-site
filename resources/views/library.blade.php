@@ -15,8 +15,13 @@ Template Name: Library
     <br>
 
 
+
+
+
+
     {{-- @include('partials.content-page') --}}
   @endwhile
+
 
   {{-- https://discourse.roots.io/t/pagination-custom-query-cpt/9908 --}}
   @php

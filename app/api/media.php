@@ -1,5 +1,8 @@
 <?php
 
+//https://www.gavick.com/blog/adding-custom-fields-in-the-wordpress-rest-api
+
+
 add_action( 'rest_api_init', 'add_custom_fields' );
 
 function add_custom_fields() {
