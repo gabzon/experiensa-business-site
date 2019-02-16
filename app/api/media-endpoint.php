@@ -70,15 +70,18 @@ function custom_meta_query(){
 
     while($query->have_posts()) {
       $query->the_post();
+      $id = get_the_ID();
       $data[] = [
-        'id'        => get_the_ID(),
+        'id'        => $id,
         'title'     => get_the_title(),
-        'slug'      => get_the_slug(),
+        'slug'      => get_post_field( 'post_name', get_post() ),
         'content'   => get_the_content(),
-        'thumbnail' => wp_get_attachment_image_src( get_the_ID(), 'thumbnail' ),
-        'medium'    => wp_get_attachment_image_src( get_the_ID(), 'medium' ),
-        'large'     => wp_get_attachment_image_src( get_the_ID(), 'large' ),
-        'full'      => wp_get_attachment_image_src( get_the_ID(), 'full' ),
+        'thumbnail' => wp_get_attachment_image_src( $id, 'thumbnail' )[0],
+        'medium'    => wp_get_attachment_image_src( $id, 'medium' )[0],
+        'large'     => wp_get_attachment_image_src( $id, 'large' )[0],
+        'full'      => wp_get_attachment_image_src( $id, 'full' )[0],
+        'season'    => wp_get_post_terms( $id, 'media_season', array("fields" => "names")),
+        'daylight'  => wp_get_post_terms( $object['id'], 'media_daylight', array("fields" => "names")),
       ];
     }
     // Return the data
