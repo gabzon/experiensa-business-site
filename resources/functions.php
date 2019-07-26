@@ -63,10 +63,16 @@ array_map(function ($file) use ($sage_error) {
   'setup',
   'filters',
   'admin',
+  'taxonomy/alliances',
+  'taxonomy/countries',
+  'taxonomy/themes',
+  'taxonomy/world-regions',
   'cpt/client',
   'api/media',
   'api/media-endpoint',
-  'inc/wp-bootstrap-pagination'
+  'api/client',
+  'inc/wp-bootstrap-pagination',
+  'appbase/create_update_client',
 ]);
 
 /**
@@ -133,27 +139,33 @@ add_filter( 'attachment_fields_to_edit', 'be_attachment_field_credit', 10, 2 );
 
 function be_attachment_field_credit_save( $post, $attachment ) {
   if( isset( $attachment['exp_media_url'] ) ){
-      update_post_meta( $post['ID'], 'exp_media_url', esc_url( $attachment['exp_media_url'] ) );
+    update_post_meta( $post['ID'], 'exp_media_url', esc_url( $attachment['exp_media_url'] ) );
   }
   return $post;
 }
 
 add_filter( 'attachment_fields_to_save', 'be_attachment_field_credit_save', 10, 2 );
 
-
 add_filter('sage/display_sidebar', function ($display) {
-    static $display;
+  static $display;
 
-    isset($display) || $display = in_array(true, [
-      // The sidebar will be displayed if any of the following return true
-      is_single(),
-      is_404(),
-      is_page_template('template-custom.php')
-    ]);
+  isset($display) || $display = in_array(true, [
+    // The sidebar will be displayed if any of the following return true
+    is_single(),
+    is_404(),
+    is_page_template('template-custom.php')
+  ]);
 
-    return $display;
+  return $display;
 });
 
+
+
+add_action( 'rest_api_init', function () {
+  //require 'includes/class-rest-tutorial-restaurant-endpoint.php';
+  $controller = new Exp_Client_Endpoint();
+  $controller->register_routes();
+} );
 
 // add_action('wp_head', 'show_template');
 // function show_template() {
@@ -162,3 +174,4 @@ add_filter('sage/display_sidebar', function ($display) {
 //     print_r($template);
 //     echo '</div>';
 // }
+//

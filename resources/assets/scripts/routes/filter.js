@@ -27,7 +27,7 @@ export default {
         }
       }
 
-      componentWillMount() {
+      UNSAFE_componentWillMount() {
         let chosenPreset = [];
         for(let i = 0; i < options.categories.length; i++) {
           chosenPreset.push('all');

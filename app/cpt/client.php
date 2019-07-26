@@ -39,7 +39,7 @@ function client_post_type() {
 		'description'           => __( 'List of Experiensa clients, It could be a Travel Agency, a Tour Operator, a Travel Service company or a Tourist Information center', 'sage' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'editor', 'thumbnail', 'page-attributes' ),
-		'taxonomies'            => array( 'category', ' post_tag' ),
+		'taxonomies'            => array( 'category', ' post_tag', 'exp_alliance', 'exp_theme', 'exp_country', 'exp_world_region' ),
 		'hierarchical'          => true,
 		'public'                => true,
 		'show_ui'               => true,
