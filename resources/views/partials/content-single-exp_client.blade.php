@@ -19,51 +19,8 @@ $contacts = get_post_meta(get_the_ID(), 'exp_client_contact') ;
 
   <div class="row">
     <div class="col-12 col-sm-6 col-md-6 col-lg-3">
-      <div class="card">
-        <img class="card-img-top" src="{{ get_the_post_thumbnail_url() }}" alt="{{ get_the_title() }}">
-        <div class="card-body">
-          <h5 class="card-title">{{ get_the_title() }}</h5>
-          <h6 class="card-subtitle mb-2 text-muted">
-            @if ( get_post_meta(get_the_ID(), 'exp_client_state', true) )
-              {{ get_post_meta(get_the_ID(), 'exp_client_state', true) }} ,
-            @endif
-             {{ $country }}
-          </h6>
-        </div>
-        <ul class="list-group list-group-flush">
-          @if ( get_post_meta(get_the_ID(), 'exp_client_email', true) )
-            <small>        
-                <li class="list-group-item"><i class="fas fa-envelope"></i>
-                  {{ get_post_meta(get_the_ID(), 'exp_client_email', true) }}
-                </li>    
-            </small>          
-          @endif
-
-          @if ( get_post_meta(get_the_ID(), 'exp_client_phone', true) )
-            <li class="list-group-item"><i class="fas fa-phone"></i>
-              {{ get_post_meta(get_the_ID(), 'exp_client_phone', true) }}
-            </li>              
-          @endif
-
-          @if ( get_post_meta(get_the_ID(), 'exp_client_website', true) )
-            <li class="list-group-item">
-              <i class="fas fa-globe"></i> 
-              <a href="{{ esc_url( get_post_meta(get_the_ID(), 'exp_client_website', true) ) }}" target="_blank">website</a>
-            </li>  
-          @endif
-
-          @if ( get_post_meta(get_the_ID(), 'exp_client_status', true) )
-          <li class="list-group-item">
-              <strong>Status: </strong>{{ get_post_meta(get_the_ID(), 'exp_client_status', true) }}
-            </li>
-          @endif
-        </ul>
-        <div class="card-body">
-          @include('clients/social')
-        </div>
-      </div>
-      <header>
-        <h1 class="entry-title"></h1>
+      @include('clients/contact-info')
+      <header class="pv3">        
         @include('partials/entry-meta')
       </header>
     </div>
@@ -116,6 +73,20 @@ $contacts = get_post_meta(get_the_ID(), 'exp_client_contact') ;
                 <a href="{{ esc_url(get_post_meta(get_the_ID(), 'exp_client_official_website', true)) }}" target="_blank">Catalog</a>                
               </li>
               @endif
+
+              @if ( get_post_meta(get_the_ID(), 'exp_client_number_employees', true) )
+                <li class="list-group-item"> 
+                  <strong>Number of employees: </strong> {{ get_post_meta(get_the_ID(), 'exp_client_number_employees', true) }}
+                </li>
+              @endif
+
+              @if ( get_post_meta(get_the_ID(), 'exp_client_branches', true) )
+                <strong>Has branches: </strong> {{ get_post_meta(get_the_ID(), 'exp_client_branches', true) }}
+              @endif
+              
+              @if ( get_post_meta(get_the_ID(), 'exp_client_number_branches', true) )
+                <strong>Number of branches: </strong> {{ get_post_meta(get_the_ID(), 'exp_client_number_branches', true) }}
+              @endif
             </ul>
           </div>
         </div>
@@ -131,9 +102,7 @@ $contacts = get_post_meta(get_the_ID(), 'exp_client_contact') ;
         </div>
       </div>
 
-      <div class="countries">                    
-          {!! get_the_term_list( get_the_ID(), 'exp_country', '<h6>Countries</h6>', ', ', '' ) !!}          
-      </div>
+      @include('clients/countries')
 
       @include('clients/taxonomies')
 
