@@ -54,7 +54,7 @@ piklist('field', [
 ]);
 
 piklist('field', [
-  'type'      => 'text',
+  'type'      => 'number',
   'field'     => 'exp_client_number_branches',
   'label'     => 'Number of Branches',
   'conditions' => [['field' => 'exp_client_branches' ,'value' => 'Yes']],
@@ -209,7 +209,7 @@ piklist('field', array(
       'attributes' => ['placeholder' => 'ex: gabriel@experiensa.com'],
     ),
     array(
-      'type'      => 'Text',
+      'type'      => 'text',
       'field'     => 'exp_client_contact_phone',
       'label'     => 'Contact Phone',
       'required'  => false,

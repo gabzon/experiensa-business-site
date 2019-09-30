@@ -43,10 +43,21 @@ $country_list = App::country_list();
           <tr>
               <td valign="top"><img class="img-fluid img-rounded" src="{{ get_the_post_thumbnail_url() }}" alt="{{ get_the_title() }}" width="100"></th>
               <td>{{ get_the_title() }}</td>
-              <td>{{ get_post_meta(get_the_ID(), 'exp_client_state', true)}}, {{ $country_list[get_post_meta(get_the_ID(), 'exp_client_country', true)] }}</td>
+              <td>
+                @if ( get_post_meta(get_the_ID(), 'exp_client_state', true) )
+                  {{ get_post_meta(get_the_ID(), 'exp_client_state', true) }},    
+                @endif                 
+                {{ $country_list[get_post_meta(get_the_ID(), 'exp_client_country', true)] }}</td>
               <td><span class="ttc">{{ get_post_meta(get_the_ID(),'exp_client_type', true) }}</span></td>
               <td>{!! get_the_term_list( get_the_ID(), 'exp_world_region', '', ', ', '' ) !!}</td>
-              <td class="tc"><a href="{{ get_the_permalink()}}"> <i class="fas fa-eye"></i> </a></td>
+              <td class="tc">
+                <a href="{{ get_the_permalink()}}">
+                  <span class="fa-stack fa-1x">
+                    <i class="fas fa-circle fa-stack-2x"></i>
+                    <i class="fas fa-eye fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </td>
             </tr>      
     </tbody>
     @endwhile
