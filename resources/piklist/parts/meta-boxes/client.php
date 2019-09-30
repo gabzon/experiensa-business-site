@@ -37,6 +37,30 @@ piklist('field', [
   'columns'   => 12,
 ]);
 
+piklist('field', [
+  'type'      => 'number',
+  'field'     => 'exp_client_number_employees',
+  'label'     => 'Number of Employees',
+  'columns'   => 2,
+]);
+
+piklist('field', [
+  'type'      => 'select',
+  'field'     => 'exp_client_branches',
+  'value'     => 'No',
+  'label'     => 'Branches',
+  'columns'   => 3,
+  'choices'   => ['No' => 'No', 'Yes' => 'Yes']
+]);
+
+piklist('field', [
+  'type'      => 'text',
+  'field'     => 'exp_client_number_branches',
+  'label'     => 'Number of Branches',
+  'conditions' => [['field' => 'exp_client_branches' ,'value' => 'Yes']],
+  'columns'   => 2,
+]);
+
 piklist('field', array(
   'type' => 'group',
   'label' => __('Address', 'sage'),
@@ -169,7 +193,7 @@ piklist('field', array(
       'attributes' => ['placeholder' => 'Full Name'],
     ),
     array(
-      'type'      => 'Select',
+      'type'      => 'select',
       'field'     => 'exp_client_contact_type',
       'label'     => 'Contact Type',
       'required'  => false,
@@ -177,7 +201,7 @@ piklist('field', array(
       'choices'   => ['Owner' => 'Owner', 'Director' => 'Director', 'Agent' => 'Agent'],
     ),
     array(
-      'type'      => 'Text',
+      'type'      => 'text',
       'field'     => 'exp_client_contact_email',
       'label'     => 'Contact Email',
       'required'  => false,
