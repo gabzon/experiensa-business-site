@@ -9,6 +9,7 @@ $sk = get_post_meta(get_the_ID(), 'exp_client_skype', true);
 $sc = get_post_meta(get_the_ID(), 'exp_client_snapchat', true);
 $wa = get_post_meta(get_the_ID(), 'exp_client_whatsapp', true);
 $tw = get_post_meta(get_the_ID(), 'exp_client_twitter', true);
+$li = get_post_meta(get_the_ID(), 'exp_client_linkedin', true);
 $coordenates = get_post_meta(get_the_ID(), 'exp_client_latitude', true) . ',' . get_post_meta(get_the_ID(),
 'exp_client_longitude', true);
 $contacts = get_post_meta(get_the_ID(), 'exp_client_contact') ;
