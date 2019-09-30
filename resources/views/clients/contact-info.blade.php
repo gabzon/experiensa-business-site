@@ -3,8 +3,8 @@
     <div class="card-body">
         <h5 class="card-title">{{ get_the_title() }}</h5>
         <h6 class="card-subtitle mb-2 text-muted">
-            @if ( get_post_meta(get_the_ID(), 'exp_client_state', true) )
-            {{ get_post_meta(get_the_ID(), 'exp_client_state', true) }} ,
+            @if ( get_post_meta(get_the_ID(), 'exp_client_city', true) )
+            {{ get_post_meta(get_the_ID(), 'exp_client_city', true) }},
             @endif
             {{ $country }}
         </h6>
