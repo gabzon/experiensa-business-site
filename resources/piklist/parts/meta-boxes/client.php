@@ -1,6 +1,8 @@
 <?php
+
+
 /*
-Title: Media
+tle: Media
 Post Type: exp_client
 */
 
@@ -26,6 +28,13 @@ piklist('field', [
   'field'   => 'exp_client_website',
   'label'   => 'Website',
   'columns' => 12,
+]);
+
+piklist('field', [
+  'type'      => 'textarea',
+  'field'     => 'exp_client_google_maps',
+  'label'     => 'Google Maps',
+  'columns'   => 12,
 ]);
 
 piklist('field', array(
@@ -84,7 +93,7 @@ piklist('field', array(
   )
 ));
 
-piklist('field', array(
+piklist('field', array (
   'type'    => 'radio',
   'field'   => 'exp_client_status',
   'value'   => 'none',
@@ -147,6 +156,7 @@ piklist('field', array(
 piklist('field', array(
   'type' => 'group',
   'label' => __('Contact information', 'sage'),
+  'field' => 'exp_client_contact',
   'list' => false,
   'add_more' => true,
   'fields' => array(
@@ -164,7 +174,7 @@ piklist('field', array(
       'label'     => 'Contact Type',
       'required'  => false,
       'columns'   => 3,
-      'choices'   => ['Owner', 'Director', 'Employee']
+      'choices'   => ['Owner' => 'Owner', 'Director' => 'Director', 'Agent' => 'Agent']
     ),
     array(
       'type'      => 'Text',
@@ -242,8 +252,11 @@ piklist('field', array(
 ));
 
 piklist('field', [
-  'type'    => 'hidden',
-  'field'   => 'exp_client_appbase_id',
+  'type'        => 'text',
+  'label'       => 'Appbase ID',
+  'field'       => 'exp_client_appbase_id',
+  'attributes'  => ['readonly' => 'readonly'],
+  'columns'     => 12,
 ]);
 
 ?>

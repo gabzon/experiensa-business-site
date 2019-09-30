@@ -1,89 +1,65 @@
 {{--
 Template Name: Clients
 --}}
-
 @extends('layouts.app')
-
 @section('content')
-  @while(have_posts()) @php(the_post())
-    <br><br>
-    {{-- @include('partials.page-header') --}}
-  @endwhile
+@while(have_posts()) @php(the_post())
+<br><br>
+{{-- @include('partials.page-header') --}}
+@endwhile
+{{-- WP_Query arguments --}}
+@php
+$args = array(
+'post_type' => array( 'exp_client' ),
+'meta_key' => 'exp_client_type',
+'posts_per_page' => -1,
+'orderby' => 'rand',
+);
+$operator = new WP_Query( $args );
+$country_list = App::country_list();
+@endphp
 
-  {{-- WP_Query arguments --}}
-  @php
-  $args = array(
-    'post_type'       => array( 'exp_client' ),
-    'meta_key'        => 'exp_client_type',
-    'posts_per_page'  => -1,
-    'meta_value'      => 'operator',
-    'orderby'         => 'rand',
-  );
-  $operator = new WP_Query( $args );
-  @endphp
+<h1 class="tc avenir pt2 fw1 ph3 ph0-l">Agencies & Tour Operators</h1>
+<br>
+{{-- The Loop --}}
 
-  <h1 class="tc avenir pt2 fw1 ph3 ph0-l">Tour Operators</h1>
-  <br>
-  {{-- The Loop --}}
-  @if ($operator->have_posts())
-    <div class="card-columns">
-      @while ( $operator->have_posts() )
-        @php($operator->the_post())
-          <a href="{{ get_post_meta(get_the_ID(), 'exp_client_website', true) }}">
-            <div class="card mb3 pv2">
-              <img class="card-img-top" src="{{ get_the_post_thumbnail_url( get_the_ID(),'post-thumbnail' ) }}" alt="{{ get_the_title() }}">
-              {{-- <div class="card-body"> --}}
-                {{-- <h5 class="card-title tc">{{ get_the_title() }}</h5> --}}
-                {{-- <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> --}}
-                {{-- <p class="card-text tc"><small class="text-muted ttc">{{ get_post_meta(get_the_ID(),'exp_client_type',true) }}</small></p> --}}
-              {{-- </div> --}}
-            </div>
-          </a>
-      @endwhile
-    </div>
-  @else
-    no Tour operators found
-  @endif
 
-  {{-- Restore original Post Data --}}
-  @php( wp_reset_postdata() )
-  <br>
-  <hr>
-  <h1 class="tc avenir pt2 fw1 ph3 ph0-l">Travel agencies</h1>
-  <br>
-  {{-- WP_Query arguments --}}
-  @php
-  $args = array(
-    'post_type'       => array( 'exp_client' ),
-    'meta_key'        => 'exp_client_type',
-    'posts_per_page'  => -1,
-    'meta_value'      => 'agency',
-    'orderby'         => 'rand',
-  );
-  $agency = new WP_Query( $args );
-  @endphp
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col" width="10%">Logo</th>
+        <th scope="col" width="15%">Name</th>
+        <th scope="col" width="20%">Location</th>
+        <th scope="col" width="10%">Type</th>
+        <th scope="col" width="40%">World Regions</th>
+        <th scope="col" width="5%">View</th>
+      </tr>
+    </thead>
+    @if ( $operator->have_posts() )
+    @while ( $operator->have_posts() )
+    @php( $operator->the_post() )
+    <tbody>
 
-  @if ($agency->have_posts())
-    <div class="card-columns">
-      @while ( $agency->have_posts() )
-        @php($agency->the_post())
-          <a href="{{ get_post_meta(get_the_ID(), 'exp_client_website', true) }}" target="_blank">
-            <div class="card mb3 pv2">
-              <img class="card-img-top" src="{{ get_the_post_thumbnail_url( get_the_ID(),'post-thumbnail' ) }}" alt="Card image cap">
-              <div class="card-body">
-                {{-- <h5 class="card-title tc">{{ get_the_title() }}</h5> --}}
-                {{-- <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> --}}
-                <p class="card-text tc"><small class="text-muted ttc">{{ get_post_meta(get_the_ID(),'exp_client_type',true) }}</small></p>
-              </div>
-            </div>
-          </a>
-      @endwhile
-    </div>
-  @else
-    No Agencies found
-  @endif
+          <tr>
+              <td valign="top"><img class="img-fluid img-rounded" src="{{ get_the_post_thumbnail_url() }}" alt="{{ get_the_title() }}" width="100"></th>
+              <td>{{ get_the_title() }}</td>
+              <td>{{ get_post_meta(get_the_ID(), 'exp_client_state', true)}}, {{ $country_list[get_post_meta(get_the_ID(), 'exp_client_country', true)] }}</td>
+              <td><span class="ttc">{{ get_post_meta(get_the_ID(),'exp_client_type', true) }}</span></td>
+              <td>{!! get_the_term_list( get_the_ID(), 'exp_world_region', '', ', ', '' ) !!}</td>
+              <td class="tc"><a href="{{ get_the_permalink()}}"> <i class="fas fa-eye"></i> </a></td>
+            </tr>      
+    </tbody>
+    @endwhile
+@else
+no Tour operators found
+@endif
+{{-- Restore original Post Data --}}
+@php( wp_reset_postdata() )
+  </table>
 
-  <div id="react1"></div>
-  {{-- @include('partials.content-page') --}}
 
+
+<div id="react1"></div>
+{{-- @include('partials.content-page') --}}
 @endsection
+

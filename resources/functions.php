@@ -167,6 +167,24 @@ add_action( 'rest_api_init', function () {
   $controller->register_routes();
 } );
 
+
+// function test_save_hook( $post_id, $post, $update ){
+//     $updated = ($update) ? "updated" : "saved";
+//     error_log("Post type " . $post->post_type . " was " . $updated);
+// }
+// add_action( 'save_post', 'test_save_hook', 10, 3 );
+//
+// function test_draft_hook( $a, $b, $c ) {
+//     global $post;
+//     error_log("Post type " . $post->post_type . " was published from draft");
+// }
+// add_action( 'draft_to_publish', 'test_draft_hook' );
+
+
+//https://wordpress.org/support/topic/alert-message-for-publishing-post-successfully/
+// echo '<pre>';
+//print_r($_POST);
+// echo '</pre>';
 // add_action('wp_head', 'show_template');
 // function show_template() {
 // 	global $template;

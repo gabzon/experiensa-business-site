@@ -85,10 +85,7 @@ class Exp_Client_Endpoint extends WP_REST_Controller {
 
   /** Prepares course data for return as an object. ***************************/
   public function prepare_item_for_response( $client, $request ) {
-    //$classroom = wp_get_post_terms( $client->ID, 'classroom', array("fields" => "names"));
-    //$classroom = Course::get_classroom($client->ID);
-    //$style = Course::get_style($course->ID);
-    //$color = Course::get_color_bar($classroom,$style);
+    
     $data = array(
       'id'                => $client->ID,
       'title'             => $client->post_title,
