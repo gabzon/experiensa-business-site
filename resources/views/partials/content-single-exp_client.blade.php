@@ -32,9 +32,11 @@ $contacts = get_post_meta(get_the_ID(), 'exp_client_contact') ;
         </div>
         <ul class="list-group list-group-flush">
           @if ( get_post_meta(get_the_ID(), 'exp_client_email', true) )
-            <li class="list-group-item"><i class="fas fa-envelope"></i>
-              {{ get_post_meta(get_the_ID(), 'exp_client_email', true) }}
-            </li>              
+            <small>        
+                <li class="list-group-item"><i class="fas fa-envelope"></i>
+                  {{ get_post_meta(get_the_ID(), 'exp_client_email', true) }}
+                </li>    
+            </small>          
           @endif
 
           @if ( get_post_meta(get_the_ID(), 'exp_client_phone', true) )
@@ -69,14 +71,18 @@ $contacts = get_post_meta(get_the_ID(), 'exp_client_contact') ;
       <div class="row">
         <div class="col-12 col-sm-12 col-md-12 col-lg-8">
           {!! get_post_meta(get_the_ID(),'exp_client_google_maps', true) !!}
-          <small>
-            <i class="fas fa-home"></i>
-            {{ get_post_meta(get_the_ID(), 'exp_client_address', true)}},
-            {{ get_post_meta(get_the_ID(), 'exp_client_postal_code', true)}},
-            {{ get_post_meta(get_the_ID(), 'exp_client_city', true)}},
-            {{ get_post_meta(get_the_ID(), 'exp_client_state', true)}}, {{ $country }}
-          </small>
-          <br>
+
+          @if (get_post_meta(get_the_ID(), 'exp_client_address', true))
+            <small>
+              <i class="fas fa-home"></i>
+              {{ get_post_meta(get_the_ID(), 'exp_client_address', true)}},
+              {{ get_post_meta(get_the_ID(), 'exp_client_postal_code', true)}},
+              {{ get_post_meta(get_the_ID(), 'exp_client_city', true)}},
+              {{ get_post_meta(get_the_ID(), 'exp_client_state', true)}}, {{ $country }}
+            </small>
+            <br>              
+          @endif
+
           @if ( get_post_meta(get_the_ID(), 'exp_client_latitude', true) )
           <span class="text-muted small">
               <i class="fas fa-location-arrow"></i> {{ $coordenates }}
@@ -107,7 +113,7 @@ $contacts = get_post_meta(get_the_ID(), 'exp_client_contact') ;
               
               @if( get_post_meta(get_the_ID(), 'exp_client_official_website', true) )
               <li class="list-group-item">
-                <a href="{{ esc_url(get_post_meta(get_the_ID(), 'exp_client_official_website', true)) }}" target="_blank">Official Website</a>                
+                <a href="{{ esc_url(get_post_meta(get_the_ID(), 'exp_client_official_website', true)) }}" target="_blank">Catalog</a>                
               </li>
               @endif
             </ul>
@@ -125,69 +131,13 @@ $contacts = get_post_meta(get_the_ID(), 'exp_client_contact') ;
         </div>
       </div>
 
-      <div class="row pv5">
-        <div class="col-12 col-sm-6 col-md-6 col-lg-3 pb3">
-          <h6>World Regions</h6>
-          {!! get_the_term_list( get_the_ID(), 'exp_world_region', '<ul class="list-group list-group-flush">
-            <li class="list-group-item pt-0 pb-0">', '</li>
-            <li class="list-group-item pt-0 pb-0">', '</li>
-          </ul>' ) !!}
-        </div>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-3 pb3">
-          <h6>Countries</h6>
-          {!! get_the_term_list( get_the_ID(), 'exp_country', '<ul class="list-group list-group-flush">
-            <li class="list-group-item pt-0 pb-0">', '</li>
-            <li class="list-group-item pt-0 pb-0">', '</li>
-          </ul>' ) !!}
-        </div>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-3 pb3">
-          <h6>Themes</h6>
-          {!! get_the_term_list( get_the_ID(), 'exp_theme', '<ul class="list-group list-group-flush">
-            <li class="list-group-item pt-0 pb-0">', '</li>
-            <li class="list-group-item pt-0 pb-0">', '</li>
-          </ul>' ) !!}
-        </div>
-        <div class="col-12 col-sm-6 col-md-6 col-lg-3 pb3">
-          <h6>Alliances</h6>
-          {!! get_the_term_list( get_the_ID(), 'exp_alliance', '<ul class="list-group list-group-flush">
-            <li class="list-group-item pt-0 pb-0">', '</li>
-            <li class="list-group-item pt-0 pb-0">', '</li>
-          </ul>' ) !!}
-        </div>
+      <div class="countries">                    
+          {!! get_the_term_list( get_the_ID(), 'exp_country', '<h6>Countries</h6>', ', ', '' ) !!}          
       </div>
 
+      @include('clients/taxonomies')
 
-      <div class="contacts">
-        <h3>Contacts</h3>
-        <hr>
-
-        <div class="row">
-          @foreach($contacts as $p)
-          @for($i = 0; $i < count($p); $i++ ) <div class="col-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">{{ $p[$i]['exp_client_contact_person']}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">
-                  {{ $p[$i]['exp_client_contact_type'] }}
-                </h6>
-              </div>
-              <ul class="list-group list-group-flush">
-                @if($p[$i]['exp_client_contact_email'])
-                <li class="list-group-item">
-                  <i class="fas fa-envelope"></i> {{ $p[$i]['exp_client_contact_email'] }}
-                </li>
-                @endif
-                @if($p[$i]['exp_client_contact_phone'])
-                <li class="list-group-item">
-                  <i class="fas fa-phone"></i> {{ $p[$i]['exp_client_contact_phone'] }}
-                </li>
-                @endif
-              </ul>
-            </div>
-        </div>
-        @endfor
-        @endforeach
-      </div>
+      @include('clients/contacts')
     </div>
   </div>
   </div>
