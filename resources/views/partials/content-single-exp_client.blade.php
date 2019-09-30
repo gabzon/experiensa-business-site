@@ -76,16 +76,20 @@ $contacts = get_post_meta(get_the_ID(), 'exp_client_contact') ;
 
               @if ( get_post_meta(get_the_ID(), 'exp_client_number_employees', true) )
                 <li class="list-group-item"> 
-                  <strong>Number of employees: </strong> {{ get_post_meta(get_the_ID(), 'exp_client_number_employees', true) }}
+                  <strong>Employees: </strong> {{ get_post_meta(get_the_ID(), 'exp_client_number_employees', true) }}
                 </li>
               @endif
 
               @if ( get_post_meta(get_the_ID(), 'exp_client_branches', true) )
-                <strong>Has branches: </strong> {{ get_post_meta(get_the_ID(), 'exp_client_branches', true) }}
+                <li class="list-group-item">
+                  <strong>Has branches: </strong> {{ get_post_meta(get_the_ID(), 'exp_client_branches', true) }}
+                </li>
               @endif
               
               @if ( get_post_meta(get_the_ID(), 'exp_client_number_branches', true) )
+              <li class="list-group-item">
                 <strong>Number of branches: </strong> {{ get_post_meta(get_the_ID(), 'exp_client_number_branches', true) }}
+              </li>
               @endif
             </ul>
           </div>
