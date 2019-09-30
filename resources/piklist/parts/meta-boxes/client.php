@@ -146,7 +146,7 @@ piklist('field', array(
       array(
         'type'    => 'text',
         'field'   => 'exp_client_official_website',
-        'label'   => 'Website',
+        'label'   => 'Catalog',
         'columns' => 12,
       ),
     )
@@ -174,7 +174,7 @@ piklist('field', array(
       'label'     => 'Contact Type',
       'required'  => false,
       'columns'   => 3,
-      'choices'   => ['Owner' => 'Owner', 'Director' => 'Director', 'Agent' => 'Agent']
+      'choices'   => ['Owner' => 'Owner', 'Director' => 'Director', 'Agent' => 'Agent'],
     ),
     array(
       'type'      => 'Text',
@@ -190,7 +190,7 @@ piklist('field', array(
       'label'     => 'Contact Phone',
       'required'  => false,
       'columns'   => 6,
-      'attributes' => ['placeholder' => 'ex: +41 76 571 4931'],
+      'attributes' => ['placeholder' => 'ex: +41 79 222 3333'],
     ),
   )
 ));
@@ -246,6 +246,12 @@ piklist('field', array(
       'type'      => 'text',
       'field'     => 'exp_client_whatsapp',
       'label'     => 'Whatsapp',
+      'columns'   => 12,
+    ),
+    array(
+      'type'      => 'text',
+      'field'     => 'exp_client_linkedin',
+      'label'     => 'Linkedin',
       'columns'   => 12,
     ),
   )
