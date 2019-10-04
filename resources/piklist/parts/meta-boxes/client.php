@@ -61,6 +61,36 @@ piklist('field', [
   'columns'   => 2,
 ]);
 
+piklist('field', [
+  'type'    => 'checkbox',
+  'field'   => 'exp_client_has_insurance',
+  'label'   => 'Has insurance?',
+  'value'   => 'no',
+  'choices' => [
+    'yes'    => 'yes',
+  ],
+  'columns' => 4,
+]);
+
+
+piklist('field', [
+  'type'    => 'checkbox',
+  'field'   => 'exp_client_has_newsletter',
+  'label'   => 'Has Newsletters?',
+  'value'   => 'no',
+  'choices' => [
+    'yes'    => 'yes',
+  ],
+  'columns' => 4,
+]);
+
+piklist('field', array(
+  'type' => 'datepicker',
+  'field' => 'exp_client_opening_date',
+  'label' => 'Opening date',
+  'options' => array('dateFormat' => 'yy/mm/dd')
+));
+
 piklist('field', array(
   'type' => 'group',
   'label' => __('Address', 'sage'),
@@ -131,6 +161,7 @@ piklist('field', array (
   )
 ));
 
+
 piklist('field', [
   'type'    => 'select',
   'field'   => 'exp_client_type',
@@ -153,6 +184,7 @@ piklist('field', array(
     array(
       'type'    => 'select',
       'field'   => 'exp_client_source_type',
+      'value'   => 'none',
       'label'   => 'Source Type',
       'choices' => [
         'newsletters' => 'Newsletters',
@@ -268,8 +300,8 @@ piklist('field', array(
     ),
     array(
       'type'      => 'text',
-      'field'     => 'exp_client_whatsapp',
-      'label'     => 'Whatsapp',
+      'field'     => 'exp_client_blog',
+      'label'     => 'Blog',
       'columns'   => 12,
     ),
     array(

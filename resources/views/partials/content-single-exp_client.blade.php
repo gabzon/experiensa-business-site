@@ -53,43 +53,61 @@ $contacts = get_post_meta(get_the_ID(), 'exp_client_contact') ;
             <ul class="list-group list-group-flush">
               @if( get_post_meta(get_the_ID(), 'exp_client_type', true) )
               <li class="list-group-item">
-                <strong>Type: </strong> <span class="ttc">{{ get_post_meta(get_the_ID(), 'exp_client_type', true) }}</span>
+                <small><strong>Type: </strong> <span class="ttc">{{ get_post_meta(get_the_ID(), 'exp_client_type', true) }}</span></small>
               </li>
               @endif
 
-              @if( get_post_meta(get_the_ID(), 'exp_client_source_type', true) )
+              @if ( get_post_meta(get_the_ID(), 'exp_client_opening_date', true) )
               <li class="list-group-item">
-                <strong>Src type: </strong>{{ get_post_meta(get_the_ID(), 'exp_client_source_type', true) }}
-              </li>
-              @endif
-              
-              @if( get_post_meta(get_the_ID(), 'exp_client_source', true) )
-              <li class="list-group-item">
-                <a href="{{ esc_url(get_post_meta(get_the_ID(), 'exp_client_source', true)) }}" target="_blank">Source</a>                  
-              </li>
-              @endif
-              
-              @if( get_post_meta(get_the_ID(), 'exp_client_official_website', true) )
-              <li class="list-group-item">
-                <a href="{{ esc_url(get_post_meta(get_the_ID(), 'exp_client_official_website', true)) }}" target="_blank">Catalog</a>                
+                <small><strong>Opening date: </strong> {{ get_post_meta(get_the_ID(), 'exp_client_opening_date', true) }}</small>
               </li>
               @endif
 
               @if ( get_post_meta(get_the_ID(), 'exp_client_number_employees', true) )
                 <li class="list-group-item"> 
-                  <strong>Employees: </strong> {{ get_post_meta(get_the_ID(), 'exp_client_number_employees', true) }}
+                  <small><strong>Employees: </strong> {{ get_post_meta(get_the_ID(), 'exp_client_number_employees', true) }}</small>
                 </li>
               @endif
 
               @if ( get_post_meta(get_the_ID(), 'exp_client_branches', true) )
                 <li class="list-group-item">
-                  <strong>Has branches: </strong> {{ get_post_meta(get_the_ID(), 'exp_client_branches', true) }}
+                  <small><strong>Has branches: </strong> {{ get_post_meta(get_the_ID(), 'exp_client_branches', true) }}</small>
                 </li>
               @endif
               
               @if ( get_post_meta(get_the_ID(), 'exp_client_number_branches', true) )
               <li class="list-group-item">
-                <strong>Number of branches: </strong> {{ get_post_meta(get_the_ID(), 'exp_client_number_branches', true) }}
+                <small><strong>Number of branches: </strong> {{ get_post_meta(get_the_ID(), 'exp_client_number_branches', true) }}</small>
+              </li>
+              @endif
+
+              @if ( get_post_meta(get_the_ID(), 'exp_client_has_insurance', true) )
+              <li class="list-group-item">
+                <small><strong>Has insurance: </strong> {{ get_post_meta(get_the_ID(), 'exp_client_has_insurance', true) }}</small>
+              </li>
+              @endif
+
+              @if ( get_post_meta(get_the_ID(), 'exp_client_has_newsletter', true) )
+              <li class="list-group-item">
+                <small><strong>Has newsletter: </strong> {{ get_post_meta(get_the_ID(), 'exp_client_has_newsletter', true) }}</small>
+              </li>
+              @endif
+
+              @if( get_post_meta(get_the_ID(), 'exp_client_source_type', true) )
+              <li class="list-group-item">
+                <small><strong>Source type: </strong>{{ get_post_meta(get_the_ID(), 'exp_client_source_type', true) }}</small>
+              </li>
+              @endif
+              
+              @if( get_post_meta(get_the_ID(), 'exp_client_source', true) )
+              <li class="list-group-item">
+                <small><a href="{{ esc_url(get_post_meta(get_the_ID(), 'exp_client_source', true)) }}" target="_blank">Source</a>                  </small>
+              </li>
+              @endif
+              
+              @if( get_post_meta(get_the_ID(), 'exp_client_official_website', true) )
+              <li class="list-group-item">
+                <small><a href="{{ esc_url(get_post_meta(get_the_ID(), 'exp_client_official_website', true)) }}" target="_blank">Catalog</a>                </small>
               </li>
               @endif
             </ul>
@@ -103,6 +121,8 @@ $contacts = get_post_meta(get_the_ID(), 'exp_client_contact') ;
           {!! get_the_term_list( get_the_ID(), 'post_tag', 'tags:', ',', '' ) !!}
         </div>
         <div class="col-12 col-sm-12 col-md-12 col-lg-4">
+          {!! get_the_term_list( get_the_ID(), 'exp_spoken_languages', 'Spoken languages: ', ', ', '' ) !!}
+          <br>
           {!! get_the_term_list( get_the_ID(), 'category', '', ', ', '' ) !!}
         </div>
       </div>

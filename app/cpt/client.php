@@ -34,12 +34,20 @@ function client_post_type() {
 		'items_list_navigation' => __( 'Clients list navigation', 'sage' ),
 		'filter_items_list'     => __( 'Filter Clients list', 'sage' ),
 	);
+
+	$rewrite = array(
+		'slug'                  => 'client',
+		'with_front'            => true,
+		'pages'                 => true,
+		'feeds'                 => true,
+	);
+
 	$args = array(
 		'label'                 => __( 'client', 'sage' ),
 		'description'           => __( 'List of Experiensa clients, It could be a Travel Agency, a Tour Operator, a Travel Service company or a Tourist Information center', 'sage' ),
 		'labels'                => $labels,
 		'supports'              => array( 'title', 'editor', 'thumbnail', 'page-attributes' ),
-		'taxonomies'            => array( 'category', ' post_tag', 'exp_alliance', 'exp_theme', 'exp_country', 'exp_world_region' ),
+		'taxonomies'            => array( 'category', ' post_tag', 'exp_alliance', 'exp_theme', 'exp_country', 'exp_world_region', 'exp_destination', 'exp_spoken_languages' ),
 		'hierarchical'          => true,
 		'public'                => true,
 		'show_ui'               => true,
@@ -61,3 +69,6 @@ function client_post_type() {
 add_action( 'init', 'client_post_type', 0 );
 
 }
+
+
+

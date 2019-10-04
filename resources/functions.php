@@ -67,6 +67,8 @@ array_map(function ($file) use ($sage_error) {
   'taxonomy/countries',
   'taxonomy/themes',
   'taxonomy/world-regions',
+  'taxonomy/languages',
+  'taxonomy/destinations',
   'cpt/client',
   'api/media',
   'api/media-endpoint',

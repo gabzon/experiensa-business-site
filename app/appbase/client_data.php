@@ -23,6 +23,8 @@ function client_data($client_id, $client){
     "countries"         => wp_get_post_terms( $client->ID, 'exp_country', array("fields" => "names")),
     "themes"            => wp_get_post_terms( $client->ID, 'exp_theme', array("fields" => "names")),
     "world_regions"     => wp_get_post_terms( $client->ID, 'exp_world_region', array("fields" => "names")),
+    "spoken_languages"  => wp_get_post_terms( $client->ID, 'exp_spoken_languages', array("fields" => "names")),
+    "destinations"      => wp_get_post_terms( $client->ID, 'exp_destination', array("fields" => "names")),
     "client_type"       => $client->exp_client_type,
     "client_status"     => $client->exp_client_status,
     "email"             => $client->exp_client_email,
@@ -46,6 +48,9 @@ function client_data($client_id, $client){
     "slug"              => $client->post_name,
     "menu_order"        => $client->menu_order,
     "status"            => $client->post_status,
+    "has_insurance"     => $client->exp_client_has_insurance,
+    "has_newsletters"   => $client->exp_client_has_newsletter,
+    "opening_date"      => $client->exp_client_opening_date,
   );
   return $post;
 }
