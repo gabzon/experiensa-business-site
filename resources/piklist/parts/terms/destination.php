@@ -82,7 +82,6 @@ piklist(
 	'field',
 	array(
 		'type' => 'select',
-		'scope' => 'taxonomy',
 		'field' => 'exp_destination_country',
 		'label' => 'Country',
 		'choices' => [ '' => 'Choose a country' ] + piklist(

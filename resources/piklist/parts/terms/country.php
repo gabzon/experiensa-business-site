@@ -49,8 +49,28 @@ piklist(
 	'field',
 	[
 		'type'    => 'text',
-		'field'   => 'exp_country_currency',
-		'label'   => 'Currency',
+		'field'   => 'exp_country_currency_name',
+		'label'   => 'Currency Name',
+		'columns' => 3,
+	]
+);
+
+piklist(
+	'field',
+	[
+		'type'    => 'text',
+		'field'   => 'exp_country_currency_code',
+		'label'   => 'Currency code',
+		'columns' => 3,
+	]
+);
+
+piklist(
+	'field',
+	[
+		'type'    => 'text',
+		'field'   => 'exp_country_currency_symbol',
+		'label'   => 'Currency symbol',
 		'columns' => 3,
 	]
 );
@@ -142,7 +162,6 @@ piklist(
 	'field',
 	array(
 		'type' => 'checkbox',
-		'scope' => 'taxonomy',
 		'field' => 'exp_country_languages',
 		'label' => 'Languages',		
 		'choices' => piklist(
@@ -161,7 +180,6 @@ piklist(
 	'field',
 	array(
 		'type' => 'checkbox',
-		'scope' => 'taxonomy',
 		'field' => 'exp_country_world_region',
 		'label' => 'World Region',
 		'choices' => piklist(
@@ -171,7 +189,7 @@ piklist(
 					'hide_empty' => false,
 				)
 			),
-			array( 'term_id', 'name' )
+			array( 'name', 'name' )
 		),
 	)
 );
