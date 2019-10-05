@@ -120,6 +120,17 @@ piklist(
 	'field',
 	[
 		'type'    => 'text',
+		'field'   => 'exp_country_media_website',
+		'label'   => 'Media Website',
+		'columns' => 12,
+
+	]
+);
+
+piklist(
+	'field',
+	[
+		'type'    => 'text',
 		'field'   => 'exp_country_restcountries',
 		'label'   => 'Restcountries',
 		'columns' => 12,
@@ -138,6 +149,25 @@ piklist(
 			get_terms(
 				array(
 					'taxonomy' => 'exp_spoken_languages',
+					'hide_empty' => false,
+				)
+			),
+			array( 'term_id', 'name' )
+		),
+	)
+);
+
+piklist(
+	'field',
+	array(
+		'type' => 'checkbox',
+		'scope' => 'taxonomy',
+		'field' => 'exp_country_world_region',
+		'label' => 'World Region',
+		'choices' => piklist(
+			get_terms(
+				array(
+					'taxonomy' => 'exp_world_region',
 					'hide_empty' => false,
 				)
 			),

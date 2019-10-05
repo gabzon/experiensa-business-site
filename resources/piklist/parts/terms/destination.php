@@ -66,6 +66,17 @@ piklist(
 	]
 );
 
+piklist(
+	'field',
+	[
+		'type'    => 'text',
+		'field'   => 'exp_destination_media_website',
+		'label'   => 'Media Website',
+		'columns' => 12,
+
+	]
+);
+
 
 piklist(
 	'field',
